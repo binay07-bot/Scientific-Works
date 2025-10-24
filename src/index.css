@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Scientific Work Design System - Dark + White theme with teal accents
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Base theme - Light mode */
+    --background: 0 0% 100%;
+    --foreground: 220 13% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 18%;
+
+    /* Primary - Professional Teal */
+    --primary: 180 84% 36%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 180 84% 46%;
+    --primary-dark: 180 84% 26%;
+
+    /* Secondary - Dark Professional */
+    --secondary: 220 13% 18%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted tones */
+    --muted: 220 13% 96%;
+    --muted-foreground: 220 8.9% 46.1%;
+
+    /* Accent - Vibrant Teal */
+    --accent: 180 100% 42%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Status colors */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    /* UI Elements */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 180 84% 36%;
+
+    /* Dark sections */
+    --dark: 220 13% 18%;
+    --dark-foreground: 0 0% 100%;
+    --dark-muted: 220 8% 25%;
+    --dark-muted-foreground: 220 5% 65%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(180 84% 36%), hsl(180 84% 46%));
+    --gradient-dark: linear-gradient(135deg, hsl(220 13% 18%), hsl(220 13% 8%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 13% 8%), hsl(220 13% 18%), hsl(180 84% 16%));
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 13% 18% / 0.05);
+    --shadow: 0 1px 3px 0 hsl(220 13% 18% / 0.1), 0 1px 2px -1px hsl(220 13% 18% / 0.1);
+    --shadow-md: 0 4px 6px -1px hsl(220 13% 18% / 0.1), 0 2px 4px -2px hsl(220 13% 18% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(220 13% 18% / 0.1), 0 4px 6px -4px hsl(220 13% 18% / 0.1);
+    --shadow-teal: 0 10px 25px -3px hsl(180 84% 36% / 0.3);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode - Enhanced dark theme */
+    --background: 220 13% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 13% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 13% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Primary remains teal in dark mode */
+    --primary: 180 84% 46%;
+    --primary-foreground: 220 13% 8%;
+    --primary-light: 180 84% 56%;
+    --primary-dark: 180 84% 36%;
+
+    /* Secondary for dark mode */
+    --secondary: 220 8% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    /* Muted for dark mode */
+    --muted: 220 8% 20%;
+    --muted-foreground: 220 5% 65%;
+
+    /* Accent remains vibrant */
+    --accent: 180 100% 52%;
+    --accent-foreground: 220 13% 8%;
+
+    /* Status colors for dark */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 142 76% 46%;
+    --success-foreground: 220 13% 8%;
+
+    /* UI Elements for dark */
+    --border: 220 8% 20%;
+    --input: 220 8% 20%;
+    --ring: 180 84% 46%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl lg:text-5xl xl:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl lg:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl lg:text-3xl;
+  }
+
+  p {
+    @apply leading-7;
+  }
+
+  /* Utility classes */
+  .section-dark {
+    @apply bg-dark text-dark-foreground;
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-dark {
+    background: var(--gradient-dark);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .shadow-teal {
+    box-shadow: var(--shadow-teal);
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  /* Custom animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+
+  /* Professional hover effects */
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .hover-teal {
+    @apply transition-all duration-300 hover:shadow-teal;
+  }
+}
+
+/* Keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
