@@ -3,10 +3,16 @@ import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle, Users, Lightbulb, Target, Award, BookOpen, Cog, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import heroImage from "@/assets/hero-research-team.jpg";
-import expertiseDomainsImage from "@/assets/expertise-domains.jpg";
-import consultancyServicesImage from "@/assets/consultancy-services.jpg";
-import researchCycleImage from "@/assets/research-cycle.jpg";
+import heroImage from "@/assets/hero-ai-tech.jpg";
+import heroImage2 from "@/assets/hero-futuristic-lab.jpg";
+import aiNeuralNetwork from "@/assets/ai-neural-network.jpg";
+import embeddedPcb from "@/assets/embedded-pcb.jpg";
+import powerGrid from "@/assets/power-grid.jpg";
+import renewableEnergy from "@/assets/renewable-energy.jpg";
+import researchLab from "@/assets/research-lab.jpg";
+import innovationTech from "@/assets/innovation-tech.jpg";
+import circuitDesign from "@/assets/circuit-design.jpg";
+import iotNetwork from "@/assets/iot-network.jpg";
 import { openCalendlyPopup, useCalendly } from "@/hooks/useCalendly";
 
 const Index = () => {
@@ -94,12 +100,24 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="relative animate-slide-up">
-              <img 
-                src={heroImage} 
-                alt="Scientific research team working on innovative projects"
-                className="rounded-2xl shadow-2xl animate-float"
-              />
+            <div className="relative animate-slide-up space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <img 
+                  src={heroImage} 
+                  alt="Artificial Intelligence and deep-tech research innovation"
+                  className="rounded-2xl shadow-2xl animate-float col-span-2"
+                />
+                <img 
+                  src={heroImage2} 
+                  alt="Futuristic laboratory with advanced technology research"
+                  className="rounded-xl shadow-lg hover-lift"
+                />
+                <img 
+                  src={researchLab} 
+                  alt="Modern research laboratory with cutting-edge equipment"
+                  className="rounded-xl shadow-lg hover-lift"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -109,27 +127,46 @@ const Index = () => {
       {/* Services Section */}
       <section className="py-20 section-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-            <div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-16">
+            <div className="space-y-6">
               <h2 className="text-4xl font-bold text-dark-foreground mb-6">
                 Our <span className="text-gradient">Services</span>
               </h2>
               <p className="text-xl text-dark-muted-foreground mb-8">
                 Comprehensive research and engineering solutions tailored to your academic and professional needs
               </p>
-              <img 
-                src={consultancyServicesImage} 
-                alt="Scientific Work consultancy services overview showing our comprehensive approach"
-                className="rounded-2xl shadow-lg hover-lift"
-              />
+              <div className="grid grid-cols-2 gap-4">
+                <img 
+                  src={aiNeuralNetwork} 
+                  alt="AI and Machine Learning neural network visualization"
+                  className="rounded-xl shadow-lg hover-lift"
+                />
+                <img 
+                  src={embeddedPcb} 
+                  alt="Embedded systems and PCB design engineering"
+                  className="rounded-xl shadow-lg hover-lift"
+                />
+              </div>
             </div>
             
-            <div>
+            <div className="grid grid-cols-1 gap-4">
               <img 
-                src={expertiseDomainsImage} 
-                alt="Our expertise domains including industrial engineering, R&D services, and academic research across multiple sectors"
-                className="rounded-2xl shadow-lg hover-lift mb-8"
+                src={powerGrid} 
+                alt="Power electronics and smart grid technology"
+                className="rounded-2xl shadow-lg hover-lift"
               />
+              <div className="grid grid-cols-2 gap-4">
+                <img 
+                  src={renewableEnergy} 
+                  alt="Renewable energy and sustainable technology research"
+                  className="rounded-xl shadow-lg hover-lift"
+                />
+                <img 
+                  src={innovationTech} 
+                  alt="Innovation and technology development"
+                  className="rounded-xl shadow-lg hover-lift"
+                />
+              </div>
             </div>
           </div>
 
@@ -191,12 +228,24 @@ const Index = () => {
               ))}
             </div>
             
-            <div>
+            <div className="space-y-4">
               <img 
-                src={researchCycleImage} 
-                alt="The Research Cycle - Our comprehensive approach to industrial consultancy and research methodology"
+                src={researchLab} 
+                alt="Advanced research laboratory with innovative technology"
                 className="rounded-2xl shadow-lg hover-lift"
               />
+              <div className="grid grid-cols-2 gap-4">
+                <img 
+                  src={circuitDesign} 
+                  alt="Circuit design and electrical engineering"
+                  className="rounded-xl shadow-lg hover-lift"
+                />
+                <img 
+                  src={iotNetwork} 
+                  alt="IoT network and smart connectivity solutions"
+                  className="rounded-xl shadow-lg hover-lift"
+                />
+              </div>
             </div>
           </div>
         </div>

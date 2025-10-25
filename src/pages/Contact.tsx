@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Calendar } from "lucide-react";
+import techOffice from "@/assets/tech-office.jpg";
+import futuristicNetwork from "@/assets/futuristic-network.jpg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -132,8 +134,15 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="gradient-hero py-12 sm:py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative gradient-hero py-12 sm:py-16 md:py-20 overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src={futuristicNetwork} 
+            alt="Futuristic technology network background"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
               Contact <span className="text-gradient">Us</span>
@@ -377,7 +386,12 @@ const Contact = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
-            <div>
+            <div className="space-y-6">
+              <img 
+                src={techOffice} 
+                alt="Modern technology office environment"
+                className="rounded-2xl shadow-lg hover-lift w-full"
+              />
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">

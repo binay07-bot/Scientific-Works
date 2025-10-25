@@ -1,8 +1,11 @@
 import { useEffect } from "react";
 import { CheckCircle, Users, Target, Award, Lightbulb, Globe } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import industrialConsultancyImage from "@/assets/industrial-consultancy.jpg";
-import expertiseDomainsImage from "@/assets/expertise-domains.jpg";
+import scientistsTeam from "@/assets/about-scientists-team.jpg";
+import labWork from "@/assets/about-lab-work.jpg";
+import collaboration from "@/assets/about-collaboration.jpg";
+import researchLab from "@/assets/research-lab.jpg";
+import globalNetwork from "@/assets/global-network.jpg";
 
 const About = () => {
   useEffect(() => {
@@ -120,12 +123,24 @@ const About = () => {
               </div>
             </div>
 
-            <div className="space-y-8">
-              <img 
-                src={industrialConsultancyImage} 
-                alt="Scientific Work - Industrial consultancy services and professional collaboration"
-                className="rounded-2xl shadow-lg hover-lift"
-              />
+            <div className="space-y-6">
+              <div className="grid grid-cols-2 gap-4">
+                <img 
+                  src={scientistsTeam} 
+                  alt="Scientific research team collaborating on innovative projects"
+                  className="rounded-2xl shadow-lg hover-lift col-span-2"
+                />
+                <img 
+                  src={labWork} 
+                  alt="Professional engineers working in advanced laboratory"
+                  className="rounded-xl shadow-lg hover-lift"
+                />
+                <img 
+                  src={collaboration} 
+                  alt="Team collaboration and professional consultancy sessions"
+                  className="rounded-xl shadow-lg hover-lift"
+                />
+              </div>
               
               <div className="bg-muted rounded-2xl p-8">
                 <h3 className="text-2xl font-bold text-foreground mb-6">Our Mission</h3>
@@ -160,12 +175,24 @@ const About = () => {
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
-            <div>
+            <div className="space-y-4">
               <img 
-                src={expertiseDomainsImage} 
-                alt="Our comprehensive expertise across multiple domains - from power sectors to smart technology"
+                src={researchLab} 
+                alt="Advanced research laboratory with comprehensive equipment and technology"
                 className="rounded-2xl shadow-lg hover-lift"
               />
+              <div className="grid grid-cols-2 gap-4">
+                <img 
+                  src={labWork} 
+                  alt="Scientists conducting research in modern laboratory"
+                  className="rounded-xl shadow-lg hover-lift"
+                />
+                <img 
+                  src={globalNetwork} 
+                  alt="Global network connectivity and technology innovation"
+                  className="rounded-xl shadow-lg hover-lift"
+                />
+              </div>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

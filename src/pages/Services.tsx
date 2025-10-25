@@ -6,12 +6,22 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ServiceGallery from "@/components/ServiceGallery";
 import { openCalendlyPopup, useCalendly } from "@/hooks/useCalendly";
-import phdServicesImage from "@/assets/phd-services.jpg";
-import phdSurvivorImage from "@/assets/phd-survivor.jpg";
-import industrialAutomationImage from "@/assets/industrial-automation.jpg";
-import civilEngineeringImage from "@/assets/civil-engineering.jpg";
-import industryResearchImage from "@/assets/industry-research.jpg";
-import servicesOverviewImage from "@/assets/services-overview.jpg";
+import phdResearch from "@/assets/phd-research.jpg";
+import aiNeuralNetwork from "@/assets/ai-neural-network.jpg";
+import aiInterface from "@/assets/ai-interface.jpg";
+import embeddedPcb from "@/assets/embedded-pcb.jpg";
+import iotDevices from "@/assets/iot-devices.jpg";
+import powerGrid from "@/assets/power-grid.jpg";
+import renewableEnergy from "@/assets/renewable-energy.jpg";
+import researchLab from "@/assets/research-lab.jpg";
+import digitalPrototype from "@/assets/digital-prototype.jpg";
+import roboticsArm from "@/assets/robotics-arm.jpg";
+import iotNetwork from "@/assets/iot-network.jpg";
+import labEquipment from "@/assets/lab-equipment.jpg";
+import circuitDesign from "@/assets/circuit-design.jpg";
+import industrialTech from "@/assets/industrial-tech.jpg";
+import automationFactory from "@/assets/automation-factory.jpg";
+import innovationTech from "@/assets/innovation-tech.jpg";
 
 const Services = () => {
   const [activeTab, setActiveTab] = useState("phd-services");
@@ -302,17 +312,27 @@ const Services = () => {
                   </p>
                   
                   {/* Category-specific images */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 max-w-5xl mx-auto">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12 max-w-6xl mx-auto">
                     {category.id === "phd-services" && (
                       <>
                         <img 
-                          src={phdServicesImage} 
-                          alt="PhD Services - Research support from topic selection to thesis completion"
+                          src={phdResearch} 
+                          alt="PhD research and academic writing support services"
                           className="rounded-xl shadow-lg hover-lift"
                         />
                         <img 
-                          src={phdSurvivorImage} 
-                          alt="PhD Candidate Support - Comprehensive guidance through research journey"
+                          src={researchLab} 
+                          alt="Advanced research laboratory facilities and equipment"
+                          className="rounded-xl shadow-lg hover-lift"
+                        />
+                        <img 
+                          src={labEquipment} 
+                          alt="Modern lab equipment for scientific research"
+                          className="rounded-xl shadow-lg hover-lift"
+                        />
+                        <img 
+                          src={digitalPrototype} 
+                          alt="Digital prototyping and research methodology"
                           className="rounded-xl shadow-lg hover-lift"
                         />
                       </>
@@ -320,23 +340,74 @@ const Services = () => {
                     {category.id === "rd-services" && (
                       <>
                         <img 
-                          src={industryResearchImage} 
-                          alt="Industry Research - Advanced R&D solutions and innovation support"
+                          src={industrialTech} 
+                          alt="Industrial technology and R&D solutions"
                           className="rounded-xl shadow-lg hover-lift"
                         />
                         <img 
-                          src={industrialAutomationImage} 
-                          alt="Industrial Automation - Complete consultancy for electrical and instrumentation engineering"
+                          src={researchLab} 
+                          alt="Research and development laboratory services"
+                          className="rounded-xl shadow-lg hover-lift"
+                        />
+                        <img 
+                          src={innovationTech} 
+                          alt="Innovation and technology consulting"
+                          className="rounded-xl shadow-lg hover-lift"
+                        />
+                        <img 
+                          src={automationFactory} 
+                          alt="Factory automation and industrial engineering"
                           className="rounded-xl shadow-lg hover-lift"
                         />
                       </>
                     )}
                     {category.id === "academic-projects" && (
-                      <img 
-                        src={industrialAutomationImage} 
-                        alt="Academic Projects - M.Tech and B.Tech project solutions"
-                        className="rounded-xl shadow-lg hover-lift"
-                      />
+                      <>
+                        <img 
+                          src={embeddedPcb} 
+                          alt="Embedded systems and PCB design projects"
+                          className="rounded-xl shadow-lg hover-lift"
+                        />
+                        <img 
+                          src={circuitDesign} 
+                          alt="Circuit design and electronics projects"
+                          className="rounded-xl shadow-lg hover-lift"
+                        />
+                        <img 
+                          src={roboticsArm} 
+                          alt="Robotics and automation projects"
+                          className="rounded-xl shadow-lg hover-lift"
+                        />
+                        <img 
+                          src={iotDevices} 
+                          alt="IoT devices and smart technology projects"
+                          className="rounded-xl shadow-lg hover-lift"
+                        />
+                      </>
+                    )}
+                    {category.id === "startup-support" && (
+                      <>
+                        <img 
+                          src={innovationTech} 
+                          alt="Innovation and startup support services"
+                          className="rounded-xl shadow-lg hover-lift"
+                        />
+                        <img 
+                          src={digitalPrototype} 
+                          alt="Product design and prototype development"
+                          className="rounded-xl shadow-lg hover-lift"
+                        />
+                        <img 
+                          src={roboticsArm} 
+                          alt="Advanced robotics and proof of concept"
+                          className="rounded-xl shadow-lg hover-lift"
+                        />
+                        <img 
+                          src={iotNetwork} 
+                          alt="IoT network and connectivity solutions"
+                          className="rounded-xl shadow-lg hover-lift"
+                        />
+                      </>
                     )}
                   </div>
                 </div>
