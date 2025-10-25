@@ -7,8 +7,11 @@ import heroImage from "@/assets/hero-research-team.jpg";
 import expertiseDomainsImage from "@/assets/expertise-domains.jpg";
 import consultancyServicesImage from "@/assets/consultancy-services.jpg";
 import researchCycleImage from "@/assets/research-cycle.jpg";
+import { openCalendlyPopup, useCalendly } from "@/hooks/useCalendly";
 
 const Index = () => {
+  useCalendly();
+
   useEffect(() => {
     // SEO: Update page title for home page
     document.title = "Scientific Work | Research, Innovation & Engineering Consultancy Services";
@@ -35,7 +38,7 @@ const Index = () => {
     },
     {
       icon: Zap,
-      title: "Startup Support",
+      title: "Project Innovations",
       description: "Innovation and prototyping for startups",
       features: ["Product Design", "Prototype Development", "Patent Drafting & Filing"]
     }
@@ -44,11 +47,11 @@ const Index = () => {
   const domains = [
     "Business Management",
     "Electrical & Electronics",
-    "Mechanical Engineering", 
+    "Mechanical Engineering",
     "Computer Science",
     "AI, ML & Quantum Technology",
     "Smart IoT",
-    "Fintech & Blockchain"
+    "Deeptech and Power Electronics"
   ];
 
   const stats = [
@@ -71,11 +74,11 @@ const Index = () => {
                 <span className="text-gradient block">Work</span>
               </h1>
               <p className="text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed">
-                Research, Innovation & Engineering Services
+                Research, Innovation & Engineering Consultancy Services
               </p>
               <p className="text-lg text-gray-400 mb-10 max-w-2xl">
                 Bridging innovations & reality through comprehensive research solutions, 
-                academic support, and engineering services.
+                academic support, and engineering consultancy services.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -88,14 +91,6 @@ const Index = () => {
                     Explore Services <ArrowRight className="ml-2" />
                   </Link>
                 </Button>
-                <Button 
-                  asChild 
-                  variant="outline" 
-                  size="lg"
-                  className="border-white text-white hover:bg-white hover:text-dark text-lg px-8 py-4"
-                >
-                  <Link to="/contact">Get Quote</Link>
-                </Button>
               </div>
             </div>
             
@@ -105,33 +100,11 @@ const Index = () => {
                 alt="Scientific research team working on innovative projects"
                 className="rounded-2xl shadow-2xl animate-float"
               />
-              <div className="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-xl shadow-lg">
-                <div className="text-center">
-                  <div className="text-2xl font-bold">10+</div>
-                  <div className="text-sm">Years Experience</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center hover-lift">
-                <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="w-8 h-8 text-white" />
-                </div>
-                <div className="text-3xl font-bold text-foreground mb-2">{stat.value}</div>
-                <div className="text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Services Section */}
       <section className="py-20 section-dark">
@@ -241,18 +214,16 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
-              asChild 
-              variant="outline" 
               size="lg"
               className="bg-white text-primary hover:bg-gray-100 border-white"
+              onClick={openCalendlyPopup}
             >
-              <Link to="/contact">Get Free Consultation</Link>
+              Get Free Consultation
             </Button>
             <Button 
               asChild 
-              variant="outline" 
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-primary"
+              className="bg-white text-primary hover:bg-gray-100 border-white"
             >
               <Link to="/about">Learn More About Us</Link>
             </Button>

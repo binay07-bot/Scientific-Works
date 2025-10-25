@@ -9,6 +9,7 @@ const Footer = () => {
     "Academic Projects",
     "Research & Development",
     "Design & Prototyping",
+    "Industrial Consultancy",
   ];
 
   const quickLinks = [
@@ -24,6 +25,7 @@ const Footer = () => {
     "Mechanical Engineering",
     "Computer Science",
     "AI & ML Technologies",
+    "Deeptech and Power Electronics",
   ];
 
   return (
@@ -34,8 +36,8 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">SW</span>
+              <div className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center">
+                <span className="text-black font-bold text-lg">SW</span>
               </div>
               <div>
                 <h3 className="text-xl font-bold text-dark-foreground">Scientific Work</h3>
@@ -43,7 +45,7 @@ const Footer = () => {
               </div>
             </Link>
             <p className="text-dark-muted-foreground leading-relaxed">
-              A Scientific Research and Design unit of 
+              A Scientific Research and Design, Engineering Consultancy unit of 
               SARALA POWERTECH CONSULTING ENGINEERS LLP, bridging innovations & reality.
             </p>
             <div className="flex space-x-4">
@@ -120,7 +122,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Phone size={18} className="text-primary" />
                 <a
-                  href="tel:+919788888292"
+                  href="tel:+918072566791"
                   className="text-dark-muted-foreground hover:text-primary transition-colors"
                 >
                   +91 8072566791
@@ -129,10 +131,10 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Mail size={18} className="text-primary" />
                 <a
-                  href="mailto:info@scientificwork.in"
+                  href="mailto:scientificwork.in@gmail.com"
                   className="text-dark-muted-foreground hover:text-primary transition-colors"
                 >
-                  info@scientificwork.in
+                  scientificwork.in@gmail.com
                 </a>
               </div>
             </div>

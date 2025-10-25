@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
+import { useCalendly, openCalendlyPopup } from "@/hooks/useCalendly";
+import Map from "@/components/Map";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,27 +21,49 @@ const Contact = () => {
     message: ""
   });
   const { toast } = useToast();
+  useCalendly();
 
   useEffect(() => {
     document.title = "Contact Us | Scientific Work - Get Expert Research Consultation";
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    toast({
-      title: "Message Sent Successfully!",
-      description: "We'll get back to you within 24 hours.",
-    });
     
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      service: "",
-      message: ""
-    });
+    try {
+      await emailjs.send(
+        'service_md5ujv8',
+        'template_lj5n0fo',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message,
+        },
+        'e8h4eKsRM65aezw1D'
+      );
+
+      toast({
+        title: "Message Sent Successfully!",
+        description: "We'll get back to you within 24 hours.",
+      });
+      
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        message: ""
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleChange = (field: string, value: string) => {
@@ -48,7 +74,8 @@ const Contact = () => {
     "PhD Services",
     "Academic Project Services", 
     "Research & Development",
-    "Startup Support & Innovation",
+    "Project Innovations",
+    "Industrial Consultancy",
     "Other"
   ];
 
@@ -63,9 +90,9 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "info@scientificwork.in",
+      content: "scientificwork.in@gmail.com",
       description: "Send us your queries anytime",
-      action: "mailto:info@scientificwork.in"
+      action: "mailto:scientificwork.in@gmail.com"
     },
     {
       icon: MapPin,
@@ -105,13 +132,13 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="gradient-hero py-20">
+      <section className="gradient-hero py-12 sm:py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-5xl font-bold text-white mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
               Contact <span className="text-gradient">Us</span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4">
               Ready to start your research journey? Get in touch with our expert team 
               for personalized consultation and project guidance.
             </p>
@@ -120,9 +147,9 @@ const Contact = () => {
       </section>
 
       {/* Contact Methods */}
-      <section className="py-20 bg-background">
+      <section className="py-12 sm:py-16 md:py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {contactMethods.map((method, index) => (
               <Card key={index} className="text-center hover-lift">
                 <CardHeader>
@@ -152,21 +179,21 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Map */}
-      <section className="py-20 section-dark">
+      <section className="py-12 sm:py-16 md:py-20 section-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
             {/* Contact Form */}
-            <div>
-              <h2 className="text-3xl font-bold text-dark-foreground mb-6">
+            <div id="contact-form">
+              <h2 className="text-2xl sm:text-3xl font-bold text-dark-foreground mb-4 sm:mb-6">
                 Send us a <span className="text-gradient">Message</span>
               </h2>
-              <p className="text-dark-muted-foreground mb-8">
+              <p className="text-sm sm:text-base text-dark-muted-foreground mb-6 sm:mb-8">
                 Fill out the form below and we'll get back to you within 24 hours with a detailed response.
               </p>
 
               <Card className="bg-dark-muted border-dark-muted">
-                <CardContent className="p-6">
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                <CardContent className="p-4 sm:p-6">
+                  <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <Label htmlFor="name" className="text-dark-foreground">Full Name</Label>
@@ -241,12 +268,34 @@ const Contact = () => {
                   </form>
                 </CardContent>
               </Card>
+
+              <div className="mt-8">
+                <Card className="bg-dark-muted border-dark-muted">
+                  <CardContent className="p-6 text-center">
+                    <Calendar className="w-12 h-12 text-primary mx-auto mb-4" />
+                    <h3 className="text-xl font-bold text-dark-foreground mb-3">
+                      Prefer to Schedule a Meeting?
+                    </h3>
+                    <p className="text-dark-muted-foreground mb-6">
+                      Book a convenient time slot for a detailed consultation
+                    </p>
+                    <Button 
+                      size="lg" 
+                      className="gradient-primary text-white"
+                      onClick={openCalendlyPopup}
+                    >
+                      <Calendar className="mr-2 w-5 h-5" />
+                      Schedule a Meeting With Us
+                    </Button>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
 
             {/* Quick Info & FAQs */}
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-dark-foreground mb-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-dark-foreground mb-4 sm:mb-6">
                   Quick <span className="text-gradient">Information</span>
                 </h3>
                 <Card className="bg-dark-muted border-dark-muted">
@@ -294,21 +343,21 @@ const Contact = () => {
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold text-dark-foreground mb-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-dark-foreground mb-4 sm:mb-6">
                   Frequently Asked <span className="text-gradient">Questions</span>
                 </h3>
-                <div className="space-y-4">
+                <Accordion type="single" collapsible className="space-y-4">
                   {faqs.map((faq, index) => (
-                    <Card key={index} className="bg-dark-muted border-dark-muted">
-                      <CardHeader>
-                        <CardTitle className="text-dark-foreground text-sm">{faq.question}</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-dark-muted-foreground text-sm">{faq.answer}</p>
-                      </CardContent>
-                    </Card>
+                    <AccordionItem key={index} value={`item-${index}`} className="bg-dark-muted border-dark-muted rounded-lg px-6">
+                      <AccordionTrigger className="text-dark-foreground text-sm font-semibold hover:no-underline">
+                        {faq.question}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-dark-muted-foreground text-sm">
+                        {faq.answer}
+                      </AccordionContent>
+                    </AccordionItem>
                   ))}
-                </div>
+                </Accordion>
               </div>
             </div>
           </div>
@@ -316,18 +365,18 @@ const Contact = () => {
       </section>
 
       {/* Location & Office Hours */}
-      <section className="py-20 bg-background">
+      <section className="py-12 sm:py-16 md:py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 sm:mb-4">
               Visit Our <span className="text-gradient">Office</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
               Schedule an in-person consultation at our Bhubaneswar office
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
             <div>
               <Card>
                 <CardHeader>
@@ -358,23 +407,12 @@ const Contact = () => {
                       </div>
                     </div>
                   </div>
-
-                  <Button className="mt-6 gradient-primary text-white">
-                    Schedule Office Visit
-                  </Button>
                 </CardContent>
               </Card>
             </div>
 
-            <div className="bg-muted rounded-lg p-8 h-96 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-16 h-16 text-primary mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-foreground mb-2">Interactive Map</h3>
-                <p className="text-muted-foreground">
-                  Map integration would be implemented here<br />
-                  showing our office location in Bhubaneswar
-                </p>
-              </div>
+            <div className="rounded-lg overflow-hidden shadow-lg h-[400px] sm:h-[500px] lg:h-[600px]">
+              <Map />
             </div>
           </div>
         </div>

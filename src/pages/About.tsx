@@ -6,7 +6,7 @@ import expertiseDomainsImage from "@/assets/expertise-domains.jpg";
 
 const About = () => {
   useEffect(() => {
-    document.title = "About Us | Scientific Work - Research & Engineering";
+    document.title = "About Us | Scientific Work - Research & Engineering Consultancy";
   }, []);
 
   const values = [
@@ -69,7 +69,7 @@ const About = () => {
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Bridging innovations & reality through comprehensive research, 
-              academic support, and engineering services since 2010
+              academic support, and engineering consultancy services since 2010
             </p>
           </div>
         </div>
@@ -84,10 +84,10 @@ const About = () => {
                 Who We Are
               </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Scientific Work is a leading Research and Design, Engineering unit of 
-                <strong> SARALA POWERTECH ENGINEERS LLP</strong>. We specialize in providing 
+                Scientific Work is a leading Research and Design, Engineering Consultancy unit of 
+                <strong> SARALA POWERTECH CONSULTING ENGINEERS LLP</strong>. We specialize in providing 
                 comprehensive solutions for academic research, PhD support, engineering projects, 
-                and innovative startup.
+                and innovative startup consultancy.
               </p>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 Located in Bhubaneswar, Odisha, we have been serving clients across India and 
@@ -131,13 +131,13 @@ const About = () => {
                 <h3 className="text-2xl font-bold text-foreground mb-6">Our Mission</h3>
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                   To bridge the gap between innovative ideas and practical reality by providing 
-                  world-class research, academic, and engineering services that 
+                  world-class research, academic, and engineering consultancy services that 
                   empower our clients to achieve excellence in their respective fields.
                 </p>
                 
                 <h3 className="text-2xl font-bold text-foreground mb-6">Our Vision</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  To be the leading firm that transforms academic and professional 
+                  To be the leading consultancy firm that transforms academic and professional 
                   aspirations into successful outcomes through innovative solutions, expert 
                   guidance, and unwavering commitment to quality.
                 </p>
@@ -282,7 +282,7 @@ const About = () => {
             <div>
               <h4 className="font-semibold mb-2">Contact</h4>
               <p className="opacity-90">
-                Phone: +91 8072566791<br />
+                Phone: +91 9788888292<br />
                 Email: info@scientificwork.in<br />
                 Web: www.scientificwork.in
               </p>
@@ -292,6 +292,7 @@ const About = () => {
               <p className="opacity-90">
                 Monday - Friday: 9:00 AM - 6:00 PM<br />
                 Saturday: 10:00 AM - 4:00 PM<br />
+                Sunday: Consultation by appointment
               </p>
             </div>
           </div>

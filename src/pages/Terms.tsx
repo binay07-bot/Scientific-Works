@@ -37,7 +37,7 @@ const Terms = () => {
             <CardContent className="prose prose-gray max-w-none">
               <p className="text-muted-foreground leading-relaxed">
                 These terms and conditions apply to customers of <strong>"SCIENTIFIC WORK"</strong>, 
-                a Scientific Research and Design, Engineering Business Sector operated by 
+                a Scientific Research and Design, Engineering Consultancy Business Sector operated by 
                 <strong> SARALA POWERTECH CONSULTING ENGINEERS LLP</strong> (LLP IN: AAG-2605).
               </p>
               <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-6">

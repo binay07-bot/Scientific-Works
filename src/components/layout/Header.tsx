@@ -38,7 +38,7 @@ const Header = () => {
             </span>
             <span className="flex items-center gap-1">
               <Mail size={14} />
-              info@scientificwork.in
+              scientificwork.in@gmail.com
             </span>
           </div>
           <div className="hidden md:block text-dark-muted-foreground">
@@ -59,8 +59,8 @@ const Header = () => {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">SW</span>
+              <div className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center">
+                <span className="text-black font-bold text-lg">SW</span>
               </div>
               <div className="hidden sm:block">
                 <h1 className="text-xl font-bold text-foreground">Scientific Work</h1>
@@ -87,11 +87,15 @@ const Header = () => {
 
             {/* CTA Button */}
             <div className="hidden md:flex items-center space-x-4">
-              <Button asChild variant="outline" size="sm">
-                <Link to="/contact">Get Quote</Link>
-              </Button>
-              <Button asChild size="sm" className="gradient-primary text-white">
-                <Link to="/contact">Start Project</Link>
+              <Button 
+                asChild 
+                size="sm" 
+                className="gradient-primary text-white"
+                onClick={() => {
+                  window.location.href = '/contact#contact-form';
+                }}
+              >
+                <Link to="/contact#contact-form">Connect with us</Link>
               </Button>
             </div>
 
@@ -123,14 +127,9 @@ const Header = () => {
                 </Link>
               ))}
               <div className="pt-4 space-y-2">
-                <Button asChild variant="outline" className="w-full">
-                  <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                    Get Quote
-                  </Link>
-                </Button>
                 <Button asChild className="w-full gradient-primary text-white">
-                  <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                    Start Project
+                  <Link to="/contact#contact-form" onClick={() => setIsMenuOpen(false)}>
+                    Connect with us
                   </Link>
                 </Button>
               </div>

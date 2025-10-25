@@ -239,7 +239,15 @@ const Careers = () => {
               <CardContent className="text-center">
                 <div className="text-3xl font-bold text-foreground mb-2">₹7,500/-</div>
                 <div className="text-sm text-muted-foreground line-through mb-4">₹18,750/-</div>
-                <p className="text-sm text-muted-foreground">Build core industry skills</p>
+                <p className="text-sm text-muted-foreground mb-4">Build core industry skills</p>
+                <Button 
+                  asChild
+                  className="w-full gradient-primary text-white"
+                >
+                  <a href="https://vtu.internyet.in/internships/413-industry-entry-level-ai-powered-industrial-power-electronics-embedded-system-design" target="_blank" rel="noopener noreferrer">
+                    Apply
+                  </a>
+                </Button>
               </CardContent>
             </Card>
 
@@ -250,7 +258,15 @@ const Careers = () => {
               <CardContent className="text-center">
                 <div className="text-3xl font-bold text-foreground mb-2">₹15,000/-</div>
                 <div className="text-sm text-muted-foreground line-through mb-4">₹37,500/-</div>
-                <p className="text-sm text-muted-foreground">Advanced technical training</p>
+                <p className="text-sm text-muted-foreground mb-4">Advanced technical training</p>
+                <Button 
+                  asChild
+                  className="w-full gradient-primary text-white"
+                >
+                  <a href="https://vtu.internyet.in/internships/413-industry-advanced-level-ai-powered-industrial-power-electronics-embedded-system-design" target="_blank" rel="noopener noreferrer">
+                    Apply
+                  </a>
+                </Button>
               </CardContent>
             </Card>
 
@@ -261,9 +277,17 @@ const Careers = () => {
               <CardContent className="text-center">
                 <div className="text-3xl font-bold text-foreground mb-2">₹30,000/-</div>
                 <div className="text-sm text-muted-foreground line-through mb-4">₹1,20,000/-</div>
-                <div className="bg-accent/20 rounded-lg p-2 text-xs text-accent font-semibold">
+                <div className="bg-accent/20 rounded-lg p-2 text-xs text-accent font-semibold mb-4">
                   Top 50 Students Only<br />Entry via Interview
                 </div>
+                <Button 
+                  asChild
+                  className="w-full gradient-primary text-white"
+                >
+                  <a href="https://vtu.internyet.in/internships/413-ip-product-rd-deep-tech-ai-powered-industrial-power-electronics-embedded-system-design" target="_blank" rel="noopener noreferrer">
+                    Apply
+                  </a>
+                </Button>
               </CardContent>
             </Card>
           </div>
@@ -302,22 +326,20 @@ const Careers = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-foreground">Chief Strategic Officer</h4>
-                  <p className="text-muted-foreground">Amareshwar Karatagi</p>
+                  <h4 className="font-semibold text-foreground">Chief Business Development Officer</h4>
+                  <p className="text-muted-foreground">A R Shalini</p>
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground">Contact</h4>
-                  <p className="text-muted-foreground">+91-9444225535 / 8792779563</p>
-                  <p className="text-muted-foreground">smpselectric@gmail.com</p>
+                  <p className="text-muted-foreground">9035874229 | 8792779563 | 8792779563</p>
+                  <p className="text-muted-foreground">careers.smpselectric@gmail.com</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground">Location</h4>
-                  <p className="text-muted-foreground">VTU-VRIF-TCOE Building<br />
-                  Nagarabhavi, Bengaluru, Karnataka - 560091</p>
+                  <h4 className="font-semibold text-foreground">Office Address</h4>
+                  <p className="text-muted-foreground">Ground Floor, VTU-VRIF-TCOE Building<br />
+                  1st Main Road, RHCS Layout, Annapoorneshwari Nagar<br />
+                  Nagarbhavi, Bengaluru, Karnataka – 560091, India</p>
                 </div>
-                <Button className="w-full gradient-primary text-white">
-                  Apply for Internship
-                </Button>
               </CardContent>
             </Card>
           </div>
@@ -348,8 +370,14 @@ const Careers = () => {
                       </CardDescription>
                     </div>
                     <div className="flex-shrink-0">
-                      <Button size="sm" className="gradient-primary text-white">
-                        Apply Now <ArrowRight className="ml-2 w-4 h-4" />
+                      <Button 
+                        asChild
+                        size="sm" 
+                        className="gradient-primary text-white"
+                      >
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdfKizSqLeqBIHGhhHJSJtxjz3YPdKdzpvvXiFr-jnENLAeUQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
+                          Apply Now <ArrowRight className="ml-2 w-4 h-4" />
+                        </a>
                       </Button>
                     </div>
                   </div>
@@ -389,8 +417,15 @@ const Careers = () => {
             <p className="text-dark-muted-foreground mb-6">
               Don't see a suitable position? We're always looking for talented individuals.
             </p>
-            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
-              Send Us Your Resume
+            <Button 
+              asChild
+              size="lg" 
+              variant="outline" 
+              className="border-primary text-primary hover:bg-primary hover:text-white"
+            >
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdfKizSqLeqBIHGhhHJSJtxjz3YPdKdzpvvXiFr-jnENLAeUQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
+                Send Us Your Resume
+              </a>
             </Button>
           </div>
         </div>
@@ -441,7 +476,7 @@ const Careers = () => {
             <div className="text-left">
               <h4 className="font-semibold mb-2">HR Department</h4>
               <p className="opacity-90">
-                Email: careers@scientificwork.in<br />
+                Email: scientificwork.in@gmail.com<br />
                 Phone: +91 8072566791
               </p>
             </div>
@@ -455,11 +490,14 @@ const Careers = () => {
           </div>
           
           <Button 
+            asChild
             size="lg"
             variant="outline"
             className="bg-white text-primary hover:bg-gray-100 border-white"
           >
-            Submit Application
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdfKizSqLeqBIHGhhHJSJtxjz3YPdKdzpvvXiFr-jnENLAeUQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
+              Submit Application
+            </a>
           </Button>
         </div>
       </section>

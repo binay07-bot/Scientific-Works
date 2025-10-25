@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ServiceGallery from "@/components/ServiceGallery";
+import { openCalendlyPopup, useCalendly } from "@/hooks/useCalendly";
 import phdServicesImage from "@/assets/phd-services.jpg";
 import phdSurvivorImage from "@/assets/phd-survivor.jpg";
 import industrialAutomationImage from "@/assets/industrial-automation.jpg";
@@ -14,6 +15,7 @@ import servicesOverviewImage from "@/assets/services-overview.jpg";
 
 const Services = () => {
   const [activeTab, setActiveTab] = useState("phd-services");
+  useCalendly();
 
   useEffect(() => {
     document.title = "Services | Scientific Work - PhD, Research & Engineering Consultancy";
@@ -196,13 +198,13 @@ const Services = () => {
     },
     {
       id: "startup-support",
-      title: "Startup Support",
+      title: "Project Innovations",
       icon: Zap, 
-      description: "Innovation and prototyping services for startups",
+      description: "Innovation and prototyping services for projects",
       services: [
         {
-          title: "Innovation for Startups",
-          description: "Innovative solutions and technology development for startup ventures.",
+          title: "Innovation for Projects",
+          description: "Innovative solutions and technology development for your projects.",
           features: [
             "Technology ideation",
             "Innovation consulting",
@@ -251,7 +253,7 @@ const Services = () => {
           ]
         }
       ]
-    },
+    }
   ];
 
   return (
@@ -263,7 +265,7 @@ const Services = () => {
             Our <span className="text-gradient">Services</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Comprehensive research, academic, and engineering services 
+            Comprehensive research, academic, and engineering consultancy services 
             designed to support your success at every stage
           </p>
         </div>
@@ -274,7 +276,7 @@ const Services = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <div className="flex justify-center mb-12">
-              <TabsList className="grid w-full max-w-4xl grid-cols-2 lg:grid-cols-5 h-auto p-1 bg-muted">
+              <TabsList className="grid w-full max-w-4xl grid-cols-2 lg:grid-cols-4 h-auto p-1 bg-muted">
                 {serviceCategories.map((category) => (
                   <TabsTrigger
                     key={category.id}
@@ -331,15 +333,8 @@ const Services = () => {
                     )}
                     {category.id === "academic-projects" && (
                       <img 
-                        src={civilEngineeringImage} 
-                        alt="Academic Projects - Civil Design Engineering and comprehensive project solutions"
-                        className="rounded-xl shadow-lg hover-lift"
-                      />
-                    )}
-                    {category.id === "addon-services" && (
-                      <img 
-                        src={servicesOverviewImage} 
-                        alt="Additional Services - Asset valuation, inspection, and technical consultancy"
+                        src={industrialAutomationImage} 
+                        alt="Academic Projects - M.Tech and B.Tech project solutions"
                         className="rounded-xl shadow-lg hover-lift"
                       />
                     )}
@@ -366,9 +361,6 @@ const Services = () => {
                             <p className="text-muted-foreground mb-4 leading-relaxed">
                               {service.description}
                             </p>
-                            <Button size="sm" className="gradient-primary text-white">
-                              Get Quote for This Service
-                            </Button>
                           </div>
                           <div>
                             <h4 className="font-semibold text-card-foreground mb-3">Key Features:</h4>
@@ -422,11 +414,6 @@ const Services = () => {
                 areas: ["Design Engineering", "Manufacturing", "Thermal Systems"]
               },
               {
-                icon: Building,
-                title: "Civil Engineering", 
-                areas: ["Structural Design", "Construction Management", "Infrastructure"]
-              },
-              {
                 icon: BookOpen,
                 title: "Computer Science",
                 areas: ["Software Development", "Data Science", "Cybersecurity"]
@@ -435,6 +422,11 @@ const Services = () => {
                 icon: Lightbulb,
                 title: "AI & ML Technologies",
                 areas: ["Machine Learning", "Deep Learning", "Neural Networks"]
+              },
+              {
+                icon: Zap,
+                title: "Deeptech and Power Electronics",
+                areas: ["Advanced Power Systems", "Semiconductor Technology", "Quantum Computing"]
               }
             ].map((domain, index) => (
               <Card key={index} className="bg-dark-muted border-dark-muted hover-lift">
@@ -476,6 +468,7 @@ const Services = () => {
             size="lg"
             variant="outline"
             className="bg-white text-primary hover:bg-gray-100 border-white"
+            onClick={openCalendlyPopup}
           >
             Get Free Consultation
           </Button>

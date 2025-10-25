@@ -6,10 +6,8 @@ import servicesOverview from "@/assets/services-overview.jpg";
 import expertiseDomains from "@/assets/expertise-domains.jpg";
 import industrialAutomation from "@/assets/industrial-automation.jpg";
 import phdSurvivor from "@/assets/phd-survivor.jpg";
-import consultancyServices from "@/assets/consultancy-services.jpg";
 import phdServices from "@/assets/phd-services.jpg";
 import industrialConsultancy from "@/assets/industrial-consultancy.jpg";
-import civilEngineering from "@/assets/civil-engineering.jpg";
 import researchCycle from "@/assets/research-cycle.jpg";
 import industryResearch from "@/assets/industry-research.jpg";
 
@@ -42,15 +40,9 @@ const ServiceGallery = () => {
       category: "Academic Services"
     },
     {
-      src: consultancyServices,
-      title: "Professional Services Overview",
-      description: "Our consultancy services include personalized approach, product expertise, preventative options, and proactive advice.",
-      category: "Consultancy"
-    },
-    {
       src: phdServices,
       title: "PhD Research Services",
-      description: "Specialized PhD services across electrical engineering, mechanical engineering, nuclear power, civil engineering, and renewable energy.",
+      description: "Specialized PhD services across electrical engineering, mechanical engineering, nuclear power, and renewable energy.",
       category: "PhD Services"
     },
     {
@@ -58,12 +50,6 @@ const ServiceGallery = () => {
       title: "Industrial Research & Consultancy",
       description: "Strategic industrial consultancy combining research expertise with practical implementation for real-world solutions.",
       category: "Industrial Research"
-    },
-    {
-      src: civilEngineering,
-      title: "Civil Design Engineering",
-      description: "Comprehensive civil engineering design services including structural design, construction management, and architectural solutions.",
-      category: "Civil Engineering"
     },
     {
       src: researchCycle,
