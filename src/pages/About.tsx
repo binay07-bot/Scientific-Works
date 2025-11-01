@@ -64,8 +64,15 @@ const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="gradient-hero py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative gradient-hero py-20 overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src={researchLab} 
+            alt="Advanced research laboratory background"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-5xl font-bold text-white mb-6">
               About <span className="text-gradient">Scientific Work</span>
@@ -309,8 +316,8 @@ const About = () => {
             <div>
               <h4 className="font-semibold mb-2">Contact</h4>
               <p className="opacity-90">
-                Phone: +91 9788888292<br />
-                Email: info@scientificwork.in<br />
+                Phone: +91 8072566791<br />
+                Email: scientificwork.in@gmail.com<br />
                 Web: www.scientificwork.in
               </p>
             </div>
